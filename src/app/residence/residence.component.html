@@ -1,10 +1,11 @@
+<!-- residence.component.html -->
+
 <p>residence works!</p>
 
-
-<ul class=" list-group " *ngFor="let r of listResidences ">
-
-    <li class="list-group-item ">
-        {{r.id}} {{r.name}} {{r.address}}
-        <button [routerLink]="['/apartement',r.id]" class="btn btn-info "> Show Appart</button>
+<ul class="list-group" *ngFor="let r of listResidences">
+    <li class="list-group-item">
+        {{ r.id }} {{ r.name }} {{ r.address }}
+        <button [routerLink]="['/apartement', r.id]" class="btn btn-info">Voir les appartements</button>
+        <button [routerLink]="['/add-apartment', r.id]" class="btn btn-primary">Ajouter un appartement</button> <!-- Nouveau bouton -->
     </li>
 </ul>

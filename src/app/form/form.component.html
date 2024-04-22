@@ -1,0 +1,38 @@
+<p>FormControl</p>
+<label>Login</label>
+
+
+<input class="form-control" type="text" [formControl]="login">
+
+
+<label>Password</label>
+<input class="form-control" type="text" [formControl]="pwd">
+
+<input class="btn btn-primary" type="submit" value="save" (click)="save()" [disabled]="login.invalid  || pwd.invalid">
+
+<hr>
+<p>FormGroup</p>
+<form [formGroup]="ResgisterForm">
+
+    <div class="form-group">
+        <label>Nom : </label>
+        <input class="form-control" type="text" formControlName="nom">
+        <div class="alert alert-danger" *ngIf="this.ResgisterForm.controls['nom'].invalid
+        && this.ResgisterForm.controls['nom'].touched">
+            <p *ngIf="this.ResgisterForm.controls['nom'].hasError('required')"> Nom doit etre obligatoire </p>
+            <p *ngIf="this.ResgisterForm.controls['nom'].hasError('minlength')"> Nom min 6 caracteres </p>
+        </div>
+
+        <label>Prenom :</label>
+        <input class="form-control" type="text" formControlName="prenom">
+
+
+        <label>Email :</label>
+        <input class="form-control" type="text" formControlName="email">
+
+
+        <label>Telephone :</label>
+        <input class="form-control" type="text" formControlName="tel">
+        <input class="btn btn-success" type="submit" value="save" (click)="test()" [disabled]="ResgisterForm.invalid">
+    </div>
+</form>

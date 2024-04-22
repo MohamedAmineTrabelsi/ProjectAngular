@@ -1,0 +1,20 @@
+<input type="text" [(ngModel)]="surfaceMax" placeholder="entrer">
+
+
+<table class="table ">
+    <tr>
+        <th>appartNum</th>
+        <th>floorNum</th>
+        <th>surface</th>
+        <th>terrace</th>
+    </tr>
+    <tr *ngFor="let a of listApp ">
+        <ng-container *ngIf="a.surface==surfaceMax|| surfaceMax==null ">
+            <td>{{a.appartNum}}</td>
+            <td>{{a.floorNum}}</td>
+            <td>{{a.surface}}</td>
+            <td>{{a.terrace}}</td>
+            <button (click)="fav(a) " class="btn btn-dark ">Like</button>
+        </ng-container>
+    </tr>
+</table>
